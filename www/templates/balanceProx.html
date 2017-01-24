@@ -1,0 +1,36 @@
+<li id="<%if(rc.ingreso){%>balance_prox_<%=rc.ingreso.id%><%}else{ %>balance_prox_<%=rc.id%><%}%>" class="collection-item avatar">
+    <%if(rc.Periodico){%>
+      <i class="material-icons circle blue"> timer </i>
+    <%}else{
+        if(rc.ingreso){ %>
+        <i class="material-icons circle purple"> today </i>
+        <%}else{
+            if(rc.Tipo== 'Egreso'){%>
+                <i class="material-icons circle red"> remove_circle_outline </i>
+            <%}else{%>
+                <i class="material-icons circle green"> add_circle_outline </i>
+            <%}
+        }
+    }%>
+      <span class="title">
+<%if(rc.Monto){%>
+    <% if(!rc.Moneda || rc.Moneda=="Soles"){%>S/.<%}else{%>$<%}%> <%=parseFloat(rc.Monto).toFixed(2)%>
+<%}else{ %>
+    <% if(!rc.ingreso.Moneda || rc.ingreso.Moneda=="Soles"){%>S/.<%}else{%>$<%}%> <%=parseFloat(rc.ingreso.Monto).toFixed(2)%>
+
+<%}%>
+</span>
+<p>
+<%if(rc.tiempo){%>
+    <%=rc.tiempo%>
+<%}else{%>
+    <%=rc.Fecha%> 
+<%}%><br><small>
+    <%if(rc.ingreso){%>
+    <%=rc.ingreso.Titulo%> 
+<%}else{ %>
+    <%=rc.Titulo%>
+<%}%>
+</small>
+</p>
+ <!--- <%=rc.Titulo%>--></li>

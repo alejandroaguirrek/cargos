@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+
+        <title>Cargos</title>
+    </head>
+    <body id="body" class="grey darken-4">
+  
+
+        <div id="container" >
+            <div class="row">
+                <div class="input-field col s6">
+                    <input type="date"id="fecha" name="fecha" class="datepicker white-text">
+                    <label for="fecha" class="active white-text">desde</label>
+                </div>
+                <div class="input-field col s6">
+                    <input type="date"id="fecha" name="fecha" class="datepicker white-text">
+                    <label for="fecha" class="active white-text">hasta</label>
+                </div>
+            </div>
+            <div class="row">
+                <div  class="col s6 white-text center-align">
+                    Ultimos 5 ingresos
+                    <ul class="collection grey-text text-darken-4 left-align"id="ingresos">
+
+                    </ul>
+                </div>
+                <div  class="col s6 white-text center-align">
+                    Ultimos 5 egresos
+                    <ul class="collection grey-text text-darken-4 left-align"id="egresos">
+
+                    </ul>
+                </div>
+
+            </div>
+            <div class="row" id="proxNeue">
+                <div  class="col s12 white-text center-align" id="titleProxingresos">
+                    proximos ingresos
+                    <ul class="collection grey-text text-darken-4 left-align"id="Proxingresos">
+
+                    </ul>
+                </div>
+                <div  class="col s12 white-text center-align" id="titleProxegresos">
+                    proximos egresos
+                    <ul class="collection grey-text text-darken-4 left-align"id="Proxegresos">
+
+                    </ul>
+                </div>
+
+            </div>
+           
+        </div>
+        <div class="fixed-action-btn vertical click-to-toggle">
+            <a class="btn-floating btn-large blue">
+                <i class="material-icons">add</i>
+            </a>
+            <ul>
+                <li><a href="egresos_add.html" class="btn-floating red"><i class="material-icons">remove_circle_outline</i></a></li>
+                <li><a href="ingresos_add.html" class="btn-floating green"><i class="material-icons">add_circle_outline</i></a></li>
+            </ul>
+        </div>
+
+        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript" src="js/accounting.min.js"></script>
+        <script type="text/javascript" src="framework/underscore.js"></script>
+        <script type="text/javascript" src="framework/coreTemplate.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/balance.js"></script>
+        <script>
+            getdata();
+        </script>
+    </body>
+</html>

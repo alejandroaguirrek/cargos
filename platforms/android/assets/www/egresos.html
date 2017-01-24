@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+
+        <title>Cargos</title>
+    </head>
+    <body id="body" class="grey darken-4">
+  
+
+        <div id="container" >
+            <ul id="data_container" class="collapsible" data-collapsible="accordion">
+                
+            </ul>
+        </div>
+       <div class="fixed-action-btn vertical click-to-toggle">
+            <a class="btn-floating btn-large blue">
+                <i class="material-icons">add</i>
+            </a>
+            <ul>
+                <li><a href="ingresos_add.html" class="btn-floating green"><i class="material-icons">add_circle_outline</i></a></li>
+                <li><a href="egresos_add.html" class="btn-floating red"><i class="material-icons">remove_circle_outline</i></a></li>
+            </ul>
+        </div>
+
+        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript" src="js/accounting.min.js"></script>
+        <script type="text/javascript" src="framework/underscore.js"></script>
+        <script type="text/javascript" src="framework/coreTemplate.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/Flujo.js"></script>
+        <script>
+
+            $('.collapsible').collapsible();
+            getdata('egresos');
+
+        </script>
+    </body>
+</html>

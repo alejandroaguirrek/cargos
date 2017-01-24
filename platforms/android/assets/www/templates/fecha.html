@@ -1,0 +1,10 @@
+<div id="fecha_div_<%-rc.index%>" class="input-field col s12">
+    <input id="fecha_<%-rc.index%>" name="fecha_<%-rc.index%>" type="date" class="white-text">
+    <label for="date" class="active white-text">Fecha</label>
+    <% print("<sc" + "ript type='text/javascript'>"); %>
+    $('#fecha_<%-rc.index%>').pickadate({
+        selectMonths: true,
+        selectYears: 15
+    });
+    <% print("</sc"+"ript>"); %>
+</div>

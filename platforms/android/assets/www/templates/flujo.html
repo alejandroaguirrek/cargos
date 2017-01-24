@@ -1,0 +1,35 @@
+<li>
+    <div class="collapsible-header">
+        <%if(rc.Programado=="Programado"){%>
+            <i class="material-icons <%if(rc.Tipo=='Egreso'){%>red-text<%}else{%>green-text<%}%>">timer</i>
+        <%}
+        if(rc.Area=="trabajo"){%>
+        <i class="material-icons">business</i>
+        <%}if(rc.Area=="personal"){%>
+        <i class="material-icons">person</i>
+        <%}if(rc.Area=="otros"){%>
+        <i class="material-icons">card_giftcard</i>
+        <%}%> S/. <%-parseFloat(rc.Monto).toFixed(2) %> <%-rc.Titulo%> <br><small><%-rc.Titulo%> - <b><%-rc.Fecha%></b></small></div>
+    <div class="collapsible-body white"><p>
+        <span class="<%if(rc.Tipo=='Egreso'){%>red-text<%}else{%>green-text<%}%>" style="font-size:15px"><%-rc.Area%>:</span>
+        <br>
+        <span class="<%if(rc.Tipo=='Egreso'){%>red-text<%}else{%>green-text<%}%>" style="padding:20px;font-size:25px">S/. <%-rc.Monto%></span>
+    <br>
+    <span class="blue-text"><%-rc.Titulo%> - <%-rc.Fecha%></span><br>
+    <%=(rc.Descripcion).replace(/(?:\r\n|\r|\n)/g, '<br>')%>
+    <%if(rc.Programado=="Programado"){%>
+        <br>
+        <br>
+        <span class="<%if(rc.Tipo=='Egreso'){%>red-text<%}else{%>green-text<%}%>"><%-rc.Tipo%> Programado:</span>
+        <%
+        if((rc.programado_ingresos)){
+            (rc.programado_ingresos).forEach(function(item, index) {%>
+                <br>fecha <%=index%>: <%=item.Fecha%>
+            <%});
+        }
+    }
+    
+    %>
+   </p>
+    </div>
+</li>
